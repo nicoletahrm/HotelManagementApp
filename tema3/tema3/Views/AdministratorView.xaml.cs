@@ -10,22 +10,21 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using tema3.ViewModels;
 
-namespace tema3
+namespace tema3.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AdministratorView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AdministratorView : Window
     {
-        MainWindowViewModel vm;
-        public MainWindow()
+        AdministratorViewModel vm;
+        public AdministratorView()
         {
             InitializeComponent();
-            vm = new MainWindowViewModel();
+            vm = new AdministratorViewModel();
             this.DataContext = vm;
         }
     }

@@ -10,23 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using tema3.ViewModels;
 
-namespace tema3
+namespace tema3.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for SignInView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SignInView : Window
     {
-        MainWindowViewModel vm;
-        public MainWindow()
+        SignInViewModel vm;
+        public SignInView(string pageName)
         {
             InitializeComponent();
-            vm = new MainWindowViewModel();
+            vm = new SignInViewModel(this);
             this.DataContext = vm;
+            Title = pageName;
+            AccountButton.Content = pageName;
         }
     }
 }

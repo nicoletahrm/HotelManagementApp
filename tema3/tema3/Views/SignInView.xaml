@@ -1,0 +1,25 @@
+﻿<Window x:Class="tema3.Views.SignInView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:tema3.Views"
+        mc:Ignorable="d"
+        Title="Hotel" Height="280" Width="300" WindowStartupLocation="CenterScreen">
+    
+    <Grid Background="Teal">
+        
+        <DockPanel>
+            
+            <Label Content="Username" FontSize="17" Margin="0 25 0 5" HorizontalAlignment="Center" DockPanel.Dock="Top" />
+            <TextBox FontSize="17" Height="30" Name="UsernameTextBox" DockPanel.Dock="Top" Width="250" />
+
+            <Label Content="Password" FontSize="17" Margin="0 25 0 5" HorizontalAlignment="Center" DockPanel.Dock="Top" />
+            <TextBox FontSize="17" Height="30" Name="PasswordTextBox" DockPanel.Dock="Top" Width="250" />
+
+            <Button Command="{Binding HandleUser}" Name="AccountButton" FontSize="15" DockPanel.Dock="Left" Height="30" Width="60" />
+        
+        </DockPanel>
+        
+    </Grid>
+</Window>

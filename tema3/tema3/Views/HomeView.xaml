@@ -1,0 +1,52 @@
+﻿<Window x:Class="tema3.Views.HomeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:tema3.Views"
+        mc:Ignorable="d"
+        Title="Hotel" ResizeMode="NoResize" Height="700" Width="800" WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="0,0,-6.4,0" Background="Teal">
+        <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0">
+            <!--<Label FontSize="20" Grid.Row="0" Content="Username: "/>-->
+            <TextBlock Text="Rooms" FontSize="30" Grid.Row="0" Width="107"/>
+        </DockPanel>
+
+        <ListBox Grid.Row="1" ItemsSource="{Binding Rooms}" SelectedItem="{Binding SelectedUser}" FontSize="15" HorizontalAlignment="Center" Width="400" Background="White" Margin="103,30,103,75">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding RoomType}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!--<DataGrid Grid.Row="1" Name="roomsDataGrid" AutoGenerateColumns="False" Width="400"
+                  ItemsSource="{Binding RoomsList}" IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="103,30,103,75">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Room" Binding="{Binding RoomType}" Width="150"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="100"/>
+                <DataGridTextColumn Header="Number of rooms" Binding="{Binding NumberOfRooms}" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>-->
+
+        <DockPanel Grid.Row="2" HorizontalAlignment="Center" DockPanel.Dock="Bottom" VerticalAlignment="Top" Height="52" Width="606">
+
+            <Button Command="{Binding Administrator}" Content ="Administrator" Width="100" Height="30" FontSize="15"  Margin="130, 10, 10, 10"/>
+
+            <Button Content ="Reserve" Width="100" Height="30" FontSize="15" />
+
+        </DockPanel>
+    </Grid>
+
+</Window>

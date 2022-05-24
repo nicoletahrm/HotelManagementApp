@@ -11,7 +11,7 @@ namespace tema3
 {
     public class AppDbContext : DbContext
     {
-        string connectionString = "Data Source=NICOPC;Initial Catalog=Tema3;Trusted_Connection=True;";
+        string connectionString = "Data Source=NICOPC;Initial Catalog=Hotel;Trusted_Connection=True;";
 
         public AppDbContext() : base() { }
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)

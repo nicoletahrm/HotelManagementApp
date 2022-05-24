@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:tema3"
         mc:Ignorable="d"
-        Title="Hotel" ResizeMode="NoResize"  Height="490" Width="500">
+        Title="Hotel" ResizeMode="NoResize"  Height="490" Width="500" WindowStartupLocation="CenterScreen">
 
-
+    
+    
     <Grid Background="Teal">
 
         <Grid.RowDefinitions>
@@ -24,7 +25,8 @@
                Width="188"
                FontSize="40"/>
 
-        <Button Content="Log In" 
+        <Button Command="{Binding LogIn}"
+                Content="Log In" 
                 Margin="0, 0, 0, 50"
                 HorizontalAlignment="Center"
                 Grid.Row="1" 
@@ -33,7 +35,8 @@
                 Width="290"
                 FontSize="20"/>
 
-        <Button Content="Create an account" 
+        <Button Command="{Binding CreateAccount}"
+                Content="Create an account" 
                 Margin="0, 0, 0, 50"
                 HorizontalAlignment="Center"
                 Grid.Row="2" 

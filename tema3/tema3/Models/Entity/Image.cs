@@ -10,6 +10,7 @@ namespace tema3.Models.Entity
     {
         public int ImageId { get; set; }
         public string Path { get; set; }
+        public bool IsActive { get; set; }
         public List<Room> Rooms { get; set; }
     }
 }

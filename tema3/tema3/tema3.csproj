@@ -7,16 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Services\SignInService.cs~RF12fb890.TMP" />
+    <None Remove="ViewModels\AdministratorViewModel.cs~RF15f0c2a.TMP" />
+    <None Remove="Views\AdministratorView.xaml~RF14440e9.TMP" />
+    <None Remove="Views\AdministratorView.xaml~RF16678cc.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.11">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
   </ItemGroup>
 
 </Project>

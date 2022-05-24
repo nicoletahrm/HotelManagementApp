@@ -10,23 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using tema3.ViewModels;
 
-namespace tema3
+namespace tema3.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for EditView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class EditView : Window
     {
-        MainWindowViewModel vm;
-        public MainWindow()
+        EditViewModel vm;
+        public EditView(string pageName)
         {
             InitializeComponent();
-            vm = new MainWindowViewModel();
+            vm = new EditViewModel(this);
             this.DataContext = vm;
+            Title = pageName;
         }
     }
 }
