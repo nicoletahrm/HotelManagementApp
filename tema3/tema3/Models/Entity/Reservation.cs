@@ -13,5 +13,7 @@ namespace tema3.Models.Entity
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public bool IsActive { get; set; }
+        public List<Room> Rooms { get; set; }
+        public List<Service> Services { get; set; }
     }
 }

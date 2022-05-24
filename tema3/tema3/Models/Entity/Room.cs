@@ -13,5 +13,10 @@ namespace tema3.Models.Entity
         public int Price { get; set; }
         public int NumberOfRooms { get; set; }
         public bool IsActive { get; set; }
+        public List<Reservation> Reservations { get; set; }
+        public List<Facility> Facilities { get; set; }
+        public List<Image> Images { get; set; }
+        public List<Offer> Offers { get; set; }
+
     }
 }
