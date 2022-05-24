@@ -26,11 +26,6 @@ namespace tema3
         public DbSet<Reservation> Reservation { get; set; }
         public DbSet<Facility> Facilitiy { get; set; }
         public DbSet<Image> Image { get; set; }
-        //public DbSet<RoomOffer> RoomOffer { get; set; }
-        //public DbSet<RoomFacility> RoomFacility { get; set; }
-        //public DbSet<RoomImage> RoomImage { get; set; }
-        //public DbSet<ReservationRoom> ReservationRoom { get; set; }
-        //public DbSet<ReservationService> ReservationService { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
