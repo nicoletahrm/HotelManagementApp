@@ -1,40 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using tema3.Help;
-using tema3.Models.Entity;
-using tema3.Services;
 using tema3.Views;
 
 namespace tema3.ViewModels
 {
-    public class EditViewModel : NotifyPropertyChangedBase
+    public class FacilityRoomEditViewModel
     {
-        private EditService editService { get; set; }
-        public EditView editView { get; set; }
-
-        public EditViewModel(EditView view)
+        private FacilityRoomEditService facilityRoomEditService { get; set; }
+        public FacilityRoomEditView facilityRoomEditView { get; set; }
+        public FacilityRoomEditViewModel(RoomEditView view)
         {
-            editService = new EditService(view);
-            editView = view;
+            facilityRoomEditService = new FacilityRoomEditService(view);
+            facilityRoomEditView = view;
         }
 
-        public Room selectedItem;
-
-        public Room SelectedItem
+        public ICommand selectCommand;
+        public ICommand SelectCommand
         {
             get
-            { 
-                return selectedItem; 
-            }
-            set 
-            { 
-                selectedItem = value; 
-                NotifyPropertyChanged("SelectedItem"); 
+            {
+                if (selectCommand == null)
+                {
+                    selectCommand = new RelayCommand(facilityRoomEditService.SelectRoom);
+                }
+                return selectCommand;
             }
         }
 
@@ -45,7 +39,7 @@ namespace tema3.ViewModels
             {
                 if (addCommand == null)
                 {
-                    addCommand = new RelayCommand(editService.AddRoom);
+                    addCommand = new RelayCommand(facilityRoomEditService.AddRoom);
                 }
                 return addCommand;
             }
@@ -58,12 +52,11 @@ namespace tema3.ViewModels
             {
                 if (deleteCommand == null)
                 {
-                    deleteCommand = new RelayCommand(editService.DeleteRoom);
+                    deleteCommand = new RelayCommand(facilityRoomEditService.DeleteRoom);
                 }
                 return deleteCommand;
             }
         }
-
 
         public ICommand editCommand;
         public ICommand EditCommand
@@ -72,7 +65,7 @@ namespace tema3.ViewModels
             {
                 if (editCommand == null)
                 {
-                    editCommand = new RelayCommand(editService.UpdateRoom);
+                    editCommand = new RelayCommand(facilityRoomEditService.UpdateRoom);
                 }
                 return editCommand;
             }

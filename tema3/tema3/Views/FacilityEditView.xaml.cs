@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,17 +12,20 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using tema3.Models.Entity;
 using tema3.ViewModels;
 
 namespace tema3.Views
 {
-    public partial class AdministratorView : Window
+    public partial class FacilityEditView : Window
     {
-        AdministratorViewModel vm;
-        public AdministratorView()
+        FacilityEditViewModel vm;
+        public FacilityEditView(string pageName, ObservableCollection<Facility> Facilities)
         {
             InitializeComponent();
-            vm = new AdministratorViewModel();
+            vm = new FacilityEditViewModel(this);
+            Title = pageName;
+            ListBox.ItemsSource = Facilities;
             this.DataContext = vm;
         }
     }

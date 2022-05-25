@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using tema3.Models.Entity;
 using tema3.ViewModels;
 
 namespace tema3.Views
@@ -21,10 +23,11 @@ namespace tema3.Views
     public partial class HomeView : Window
     {
         HomeViewModel vm;
-        public HomeView()
+        public HomeView(ObservableCollection<Room> Rooms)
         {
             InitializeComponent();
             vm = new HomeViewModel();
+            ListBox.ItemsSource = Rooms;
             this.DataContext = vm;
         }
     }

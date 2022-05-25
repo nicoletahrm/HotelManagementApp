@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:tema3.Views"
         mc:Ignorable="d"
-        Title="Hotel" Height="280" Width="300" WindowStartupLocation="CenterScreen">
+        Title="Hotel" Height="280" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     
     <Grid Background="Teal">
         
@@ -15,7 +15,7 @@
             <TextBox FontSize="17" Height="30" Name="UsernameTextBox" DockPanel.Dock="Top" Width="250" />
 
             <Label Content="Password" FontSize="17" Margin="0 25 0 5" HorizontalAlignment="Center" DockPanel.Dock="Top" />
-            <TextBox FontSize="17" Height="30" Name="PasswordTextBox" DockPanel.Dock="Top" Width="250" />
+            <PasswordBox FontSize="17" Height="30" Name="PasswordBox" DockPanel.Dock="Top" Width="250" />
 
             <Button Command="{Binding HandleUser}" Name="AccountButton" FontSize="15" DockPanel.Dock="Left" Height="30" Width="60" />
         

@@ -15,12 +15,18 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
 
         <Button Command="{Binding EditRooms}" Content="Rooms" Grid.Row="0" FontSize="17" Width="150" Height="40"></Button>
         <Button Command="{Binding EditFacilities}" Content="Facilities" Grid.Row="1" FontSize="17" Width="150" Height="40"></Button>
         <Button Command="{Binding EditServices}" Content="Services" Grid.Row="2" FontSize="17" Width="150" Height="40"></Button>
         <Button Command="{Binding EditOffers}" Content="Offers" Grid.Row="3" FontSize="17" Width="150" Height="40"></Button>
         <Button Command="{Binding EditImages}" Content="Images" Grid.Row="4" FontSize="17" Width="150" Height="40"></Button>
+
+        <Button Command="{Binding EditRoomsFacilities}" Content="Rooms facilities" Grid.Column="1" Grid.Row="0" FontSize="17" Width="150" Height="40"></Button>
 
     </Grid>
 </Window>

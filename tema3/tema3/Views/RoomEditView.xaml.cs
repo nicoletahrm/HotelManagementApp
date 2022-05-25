@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,17 +12,23 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using tema3.Models.Entity;
 using tema3.ViewModels;
 
 namespace tema3.Views
 {
-    public partial class AdministratorView : Window
+    /// <summary>
+    /// Interaction logic for EditView.xaml
+    /// </summary>
+    public partial class RoomEditView : Window
     {
-        AdministratorViewModel vm;
-        public AdministratorView()
+        RoomEditViewModel vm;
+        public RoomEditView(string pageName, ObservableCollection<Room> Rooms)
         {
             InitializeComponent();
-            vm = new AdministratorViewModel();
+            vm = new RoomEditViewModel(this);
+            Title = pageName;
+            ListBox.ItemsSource = Rooms;
             this.DataContext = vm;
         }
     }

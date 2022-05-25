@@ -11,18 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using tema3.ViewModels;
 
 namespace tema3.Views
 {
-    public partial class AdministratorView : Window
+    /// <summary>
+    /// Interaction logic for FacilityRoomEditView.xaml
+    /// </summary>
+    public partial class FacilityRoomEditView : Window
     {
-        AdministratorViewModel vm;
-        public AdministratorView()
+        public FacilityRoomEditView()
         {
             InitializeComponent();
-            vm = new AdministratorViewModel();
-            this.DataContext = vm;
         }
     }
 }

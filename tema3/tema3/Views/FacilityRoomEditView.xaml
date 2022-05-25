@@ -1,0 +1,48 @@
+﻿<Window x:Class="tema3.Views.FacilityRoomEditView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:tema3.Views"
+        mc:Ignorable="d"
+         Title="Edit facilities" Height="450" Width="890" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    
+    <Grid Background="Teal">
+
+        <DockPanel Margin="-5, 10, 10, 10">
+
+            <DataGrid Name="ListBox" Grid.Row="1" FontSize="15" Width="337" Background="White" Margin="103,30,103,75" AutoGenerateColumns="False" Height="306"
+                  IsReadOnly="True"
+                  ScrollViewer.VerticalScrollBarVisibility="Visible">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="150" Header="Room type" Binding="{Binding RoomType}" />
+                    <DataGridTextColumn Width="160" Header="Facility type" Binding="{Binding FacilityType}" />
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Button Command="{Binding SelectCommand}" Content="Select" Height="30" Width="100" Margin="-60, 10, 10, 10"/>
+
+            <DockPanel Height="211" Width="265">
+
+                <Label Content="Room type" FontSize="17" HorizontalAlignment="Center" DockPanel.Dock="Top" />
+                <ComboBox ItemsSource="{Binding Rooms}" Name="RoomsComboBox" FontSize="17" DockPanel.Dock="Top" Height="30" Width="250">
+                    <ComboBoxItem Content="{Binding RoomType}"/>
+                </ComboBox>
+
+                <Label Content="Facilirty type" FontSize="17" HorizontalAlignment="Center" DockPanel.Dock="Top" />
+                <ComboBox  ItemsSource="{Binding Facilities}" Name="FacilitiesComboBox" FontSize="17" DockPanel.Dock="Top" Height="30" Width="250">
+                    <ComboBoxItem Content="{Binding FacilityType}"/>
+                </ComboBox>
+
+                <DockPanel Margin="10, 10, 10, 10" Width="240">
+                    <Button Command="{Binding AddCommand, UpdateSourceTrigger=PropertyChanged}" Content="Add" Margin="0, 0, 30, 0" Name="AddButton" FontSize="15" Height="30" Width="60" />
+                    <Button Command="{Binding EditCommand, UpdateSourceTrigger=PropertyChanged}" Content="Edit" Margin="0, 0, 30, 0" Name="EditButton" FontSize="15" Height="30" Width="60" />
+                    <Button Command="{Binding DeleteCommand, UpdateSourceTrigger=PropertyChanged}" Content="Delete" FontSize="15" Height="30" Width="60" />
+                </DockPanel>
+
+            </DockPanel>
+
+        </DockPanel>
+
+    </Grid>
+</Window>

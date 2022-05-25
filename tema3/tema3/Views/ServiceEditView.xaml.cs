@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,13 +16,18 @@ using tema3.ViewModels;
 
 namespace tema3.Views
 {
-    public partial class AdministratorView : Window
+    /// <summary>
+    /// Interaction logic for ServicesEditView.xaml
+    /// </summary>
+    public partial class ServiceEditView : Window
     {
-        AdministratorViewModel vm;
-        public AdministratorView()
+        ServiceEditViewModel vm;
+        public ServiceEditView(string pageName, ObservableCollection<Models.Entity.Service> Services)
         {
             InitializeComponent();
-            vm = new AdministratorViewModel();
+            vm = new ServiceEditViewModel(this);
+            Title = pageName;
+            ListBox.ItemsSource = Services;
             this.DataContext = vm;
         }
     }

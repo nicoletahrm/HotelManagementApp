@@ -23,26 +23,20 @@
             <TextBlock Text="Rooms" FontSize="30" Grid.Row="0" Width="107"/>
         </DockPanel>
 
-        <ListBox Grid.Row="1" ItemsSource="{Binding Rooms}" SelectedItem="{Binding SelectedUser}" FontSize="15" HorizontalAlignment="Center" Width="400" Background="White" Margin="103,30,103,75">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding RoomType}"/>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-
-        <!--<DataGrid Grid.Row="1" Name="roomsDataGrid" AutoGenerateColumns="False" Width="400"
-                  ItemsSource="{Binding RoomsList}" IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="103,30,103,75">
+        <DataGrid Name="ListBox" Grid.Row="1" FontSize="15" HorizontalAlignment="Center" Width="337" Background="White" Margin="0,55,0,114" AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  ScrollViewer.VerticalScrollBarVisibility="Visible">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Room" Binding="{Binding RoomType}" Width="150"/>
-                <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="100"/>
-                <DataGridTextColumn Header="Number of rooms" Binding="{Binding NumberOfRooms}" Width="150"/>
+                <DataGridTextColumn Width="150" Header="Room type" Binding="{Binding RoomType}" />
+                <DataGridTextColumn Header="Price" Binding="{Binding Price}" />
+                <DataGridTextColumn Width="30" Header="  " Binding="{Binding NumberOfRooms}" />
+                <DataGridTextColumn Width="90" Header="Active" Binding="{Binding IsActive}" />
             </DataGrid.Columns>
-        </DataGrid>-->
+        </DataGrid>
 
         <DockPanel Grid.Row="2" HorizontalAlignment="Center" DockPanel.Dock="Bottom" VerticalAlignment="Top" Height="52" Width="606">
 
-            <Button Command="{Binding Administrator}" Content ="Administrator" Width="100" Height="30" FontSize="15"  Margin="130, 10, 10, 10"/>
+            <Button Command="{Binding Administrator}" Name="AdminButton" Content ="Administrator" Width="100" Height="30" FontSize="15"  Margin="130, 10, 10, 10"/>
 
             <Button Content ="Reserve" Width="100" Height="30" FontSize="15" />
 

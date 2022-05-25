@@ -10,7 +10,7 @@ namespace tema3.Models.Entity
     {
         public int ServiceId { get; set; }
         public string ServiceName { get; set; }
-        public List<Reservation> Reservations { get; set; }
         public bool IsActive { get; set; }
+        public List<Reservation> Reservations { get; set; }
     }
 }

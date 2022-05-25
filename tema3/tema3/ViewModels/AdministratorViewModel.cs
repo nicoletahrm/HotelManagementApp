@@ -13,8 +13,6 @@ namespace tema3.ViewModels
     public class AdministratorViewModel
     {
         private AdministratorService administratorService { get; set; }
-        public EditView editView { get; set; }
-
         public AdministratorViewModel()
         {
             administratorService = new AdministratorService();
