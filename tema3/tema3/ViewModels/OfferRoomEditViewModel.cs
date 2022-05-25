@@ -10,14 +10,14 @@ using tema3.Views;
 
 namespace tema3.ViewModels
 {
-    public class FacilityRoomEditViewModel
+    public class OfferRoomEditViewModel
     {
-        private FacilityRoomEditService facilityRoomEditService { get; set; }
-        public FacilityRoomEditView facilityRoomEditView { get; set; }
-        public FacilityRoomEditViewModel(FacilityRoomEditView view)
+        private OfferRoomEditService offerRoomEditService { get; set; }
+        public OfferRoomEditView offerRoomEditView { get; set; }
+        public OfferRoomEditViewModel(OfferRoomEditView view)
         {
-            facilityRoomEditService = new FacilityRoomEditService(view);
-            facilityRoomEditView = view;
+            offerRoomEditService = new OfferRoomEditService(view);
+            offerRoomEditView = view;
         }
 
         public ICommand selectCommand;
@@ -27,7 +27,7 @@ namespace tema3.ViewModels
             {
                 if (selectCommand == null)
                 {
-                    selectCommand = new RelayCommand(facilityRoomEditService.SelectFacilitiesRooms);
+                    selectCommand = new RelayCommand(offerRoomEditService.SelectOfferRoom);
                 }
                 return selectCommand;
             }
@@ -40,7 +40,7 @@ namespace tema3.ViewModels
             {
                 if (addCommand == null)
                 {
-                    addCommand = new RelayCommand(facilityRoomEditService.AddFacilityRoom);
+                    addCommand = new RelayCommand(offerRoomEditService.AddOfferRoom);
                 }
                 return addCommand;
             }
@@ -53,7 +53,7 @@ namespace tema3.ViewModels
             {
                 if (deleteCommand == null)
                 {
-                    deleteCommand = new RelayCommand(facilityRoomEditService.DeleteFacilityRoom);
+                    deleteCommand = new RelayCommand(offerRoomEditService.DeleteOfferRoom);
                 }
                 return deleteCommand;
             }
@@ -66,7 +66,7 @@ namespace tema3.ViewModels
             {
                 if (editCommand == null)
                 {
-                    editCommand = new RelayCommand(facilityRoomEditService.UpdateFacilityRoom);
+                    editCommand = new RelayCommand(offerRoomEditService.UpdateOfferRoom);
                 }
                 return editCommand;
             }

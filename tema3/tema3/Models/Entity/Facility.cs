@@ -12,5 +12,10 @@ namespace tema3.Models.Entity
         public string FacilityType  { get; set; }
         public bool IsActive { get; set; }
         public List<Room> Rooms { get; set; }
+
+        public Facility()
+        {
+            Rooms = new List<Room>();
+        }
     }
 }

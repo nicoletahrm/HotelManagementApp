@@ -18,17 +18,17 @@ using tema3.ViewModels;
 namespace tema3.Views
 {
     /// <summary>
-    /// Interaction logic for FacilityRoomEditView.xaml
+    /// Interaction logic for OfferRoomEditView.xaml
     /// </summary>
-    public partial class FacilityRoomEditView : Window
+    public partial class OfferRoomEditView : Window
     {
-        FacilityRoomEditViewModel vm;
-        public FacilityRoomEditView(string pageName, ObservableCollection<Room> Rooms, ObservableCollection<Facility> Facilities)
+        OfferRoomEditViewModel vm;
+        public OfferRoomEditView(string pageName, ObservableCollection<Room> Rooms, ObservableCollection<Offer> Offers)
         {
             InitializeComponent();
-            vm = new FacilityRoomEditViewModel(this);
+            vm = new OfferRoomEditViewModel(this);
             Title = pageName;
-            FacilitiesListBox.ItemsSource = Facilities;
+            OffersListBox.ItemsSource = Offers;
             RoomsListBox.ItemsSource = Rooms;
             this.DataContext = vm;
         }

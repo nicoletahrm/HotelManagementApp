@@ -26,7 +26,9 @@
         <Button Command="{Binding EditOffers}" Content="Offers" Grid.Row="3" FontSize="17" Width="150" Height="40"></Button>
         <Button Command="{Binding EditImages}" Content="Images" Grid.Row="4" FontSize="17" Width="150" Height="40"></Button>
 
-        <Button Command="{Binding EditRoomsFacilities}" Content="Rooms facilities" Grid.Column="1" Grid.Row="0" FontSize="17" Width="150" Height="40"></Button>
+        <Button Command="{Binding EditRoomsFacilities}" Content="Rooms facilities" Grid.Column="1" Grid.Row="1" FontSize="17" Width="150" Height="40"></Button>
+        <Button Command="{Binding EditRoomsOffers}" Content="Rooms offers" Grid.Column="1" Grid.Row="2" FontSize="17" Width="150" Height="40"></Button>
+        <Button Command="{Binding EditRoomsImages}" Content="Rooms images" Grid.Column="1" Grid.Row="3" FontSize="17" Width="150" Height="40"></Button>
 
     </Grid>
 </Window>

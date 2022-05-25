@@ -82,5 +82,45 @@ namespace tema3.ViewModels
                 return editImages;
             }
         }
+
+        private ICommand editRoomsFacilities;
+        public ICommand EditRoomsFacilities
+        {
+            get
+            {
+                if (editRoomsFacilities == null)
+                {
+                    editRoomsFacilities = new RelayCommand(administratorService.EditRoomsFacilities);
+                }
+                return editRoomsFacilities;
+            }
+        }
+
+
+        private ICommand editRoomsOffers;
+        public ICommand EditRoomsOffers
+        {
+            get
+            {
+                if (editRoomsOffers == null)
+                {
+                    editRoomsOffers = new RelayCommand(administratorService.EditRoomsOffers);
+                }
+                return editRoomsOffers;
+            }
+        }
+
+        private ICommand editRoomsImages;
+        public ICommand EditRoomsImages
+        {
+            get
+            {
+                if (editRoomsImages == null)
+                {
+                    editRoomsImages = new RelayCommand(administratorService.EditRoomsImages);
+                }
+                return editRoomsImages;
+            }
+        }
     }
 }

@@ -10,7 +10,7 @@ using tema3;
 namespace tema3.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220524153239_initial")]
+    [Migration("20220525185737_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -240,8 +240,8 @@ namespace tema3.Migrations
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Role")
-                        .HasColumnType("int");
+                    b.Property<string>("Role")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Username")
                         .HasColumnType("nvarchar(max)");

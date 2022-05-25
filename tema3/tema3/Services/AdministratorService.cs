@@ -74,5 +74,41 @@ namespace tema3.Services
             ImageEditView view = new ImageEditView("Images", Images);
             view.Show();
         }
+
+        public void EditRoomsFacilities(Object sender)
+        {
+            ObservableCollection<Room> myObservableCollection = new ObservableCollection<Room>(_roomRepo.GetAll());
+            Rooms = myObservableCollection;
+
+            ObservableCollection<Facility> myObservableCollection1 = new ObservableCollection<Facility>(_facilityRepo.GetAll());
+            Facilities = myObservableCollection1;
+
+            FacilityRoomEditView view = new FacilityRoomEditView("Rooms facilities", Rooms, Facilities);
+            view.Show();
+        }
+
+        public void EditRoomsOffers(Object sender)
+        {
+            ObservableCollection<Room> myObservableCollection = new ObservableCollection<Room>(_roomRepo.GetAll());
+            Rooms = myObservableCollection;
+
+            ObservableCollection<Offer> myObservableCollection1 = new ObservableCollection<Offer>(_offerRepo.GetAll());
+            Offers = myObservableCollection1;
+
+            OfferRoomEditView view = new OfferRoomEditView("Rooms offers", Rooms, Offers);
+            view.Show();
+        }
+
+        public void EditRoomsImages(Object sender)
+        {
+            ObservableCollection<Room> myObservableCollection = new ObservableCollection<Room>(_roomRepo.GetAll());
+            Rooms = myObservableCollection;
+
+            ObservableCollection<Image> myObservableCollection1 = new ObservableCollection<Image>(_imageRepo.GetAll());
+            Images = myObservableCollection1;
+
+            ImageRoomEditView view = new ImageRoomEditView("Rooms images", Rooms, Images);
+            view.Show();
+        }
     }
 }

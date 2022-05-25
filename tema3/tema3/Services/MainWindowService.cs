@@ -40,6 +40,7 @@ namespace tema3.Services
             Rooms = myObservableCollection;
 
             HomeView view = new HomeView(Rooms);
+            view.AdminButton.Visibility = System.Windows.Visibility.Hidden;
 
             view.Show();
         }

@@ -15,5 +15,10 @@ namespace tema3.Models.Entity
         public int OfferPrice { get; set; }
         public bool IsActive { get; set; }
         public List<Room> Rooms { get; set; }
+
+        public Offer()
+        {
+            Rooms = new List<Room>();
+        }
     }
 }

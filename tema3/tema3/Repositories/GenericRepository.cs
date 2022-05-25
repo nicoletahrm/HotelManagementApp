@@ -49,8 +49,12 @@ namespace tema3.Repositories
 
         public void Update(T obj)
         {
-            table.Update(obj);
-            _appDbContext.SaveChanges();
+            try
+            {
+                table.Update(obj);
+                _appDbContext.SaveChanges();
+            }
+            catch (Exception ex) { }
         }
     }
 }

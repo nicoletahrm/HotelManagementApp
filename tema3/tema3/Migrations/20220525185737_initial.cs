@@ -91,7 +91,7 @@ namespace tema3.Migrations
                     Username = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
-                    Role = table.Column<int>(type: "nvarchar(max)", nullable: false)
+                    Role = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -102,21 +102,21 @@ namespace tema3.Migrations
                 name: "FacilityRoom",
                 columns: table => new
                 {
-                    FacilityId = table.Column<int>(type: "int", nullable: false),
-                    RoomId = table.Column<int>(type: "int", nullable: false)
+                    FacilitiesFacilityId = table.Column<int>(type: "int", nullable: false),
+                    RoomsRoomId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FacilityRoom", x => new { x.FacilityId, x.RoomId });
+                    table.PrimaryKey("PK_FacilityRoom", x => new { x.FacilitiesFacilityId, x.RoomsRoomId });
                     table.ForeignKey(
-                        name: "FK_FacilityRoom_Facilitiy_FacilityId",
-                        column: x => x.FacilityId,
+                        name: "FK_FacilityRoom_Facilitiy_FacilitiesFacilityId",
+                        column: x => x.FacilitiesFacilityId,
                         principalTable: "Facilitiy",
                         principalColumn: "FacilityId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_FacilityRoom_Room_RoomId",
-                        column: x => x.RoomId,
+                        name: "FK_FacilityRoom_Room_RoomsRoomId",
+                        column: x => x.RoomsRoomId,
                         principalTable: "Room",
                         principalColumn: "RoomId",
                         onDelete: ReferentialAction.Cascade);
@@ -126,21 +126,21 @@ namespace tema3.Migrations
                 name: "ImageRoom",
                 columns: table => new
                 {
-                    ImageId = table.Column<int>(type: "int", nullable: false),
-                    RoomId = table.Column<int>(type: "int", nullable: false)
+                    ImagesImageId = table.Column<int>(type: "int", nullable: false),
+                    RoomsRoomId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ImageRoom", x => new { x.ImageId, x.RoomId });
+                    table.PrimaryKey("PK_ImageRoom", x => new { x.ImagesImageId, x.RoomsRoomId });
                     table.ForeignKey(
-                        name: "FK_ImageRoom_Image_ImageId",
-                        column: x => x.ImageId,
+                        name: "FK_ImageRoom_Image_ImagesImageId",
+                        column: x => x.ImagesImageId,
                         principalTable: "Image",
                         principalColumn: "ImageId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ImageRoom_Room_RoomId",
-                        column: x => x.RoomId,
+                        name: "FK_ImageRoom_Room_RoomsRoomId",
+                        column: x => x.RoomsRoomId,
                         principalTable: "Room",
                         principalColumn: "RoomId",
                         onDelete: ReferentialAction.Cascade);
@@ -150,21 +150,21 @@ namespace tema3.Migrations
                 name: "OfferRoom",
                 columns: table => new
                 {
-                    OfferId = table.Column<int>(type: "int", nullable: false),
-                    RoomId = table.Column<int>(type: "int", nullable: false)
+                    OffersOfferId = table.Column<int>(type: "int", nullable: false),
+                    RoomsRoomId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_OfferRoom", x => new { x.OfferId, x.RoomId });
+                    table.PrimaryKey("PK_OfferRoom", x => new { x.OffersOfferId, x.RoomsRoomId });
                     table.ForeignKey(
-                        name: "FK_OfferRoom_Offer_OfferId",
-                        column: x => x.OfferId,
+                        name: "FK_OfferRoom_Offer_OffersOfferId",
+                        column: x => x.OffersOfferId,
                         principalTable: "Offer",
                         principalColumn: "OfferId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_OfferRoom_Room_RoomId",
-                        column: x => x.RoomId,
+                        name: "FK_OfferRoom_Room_RoomsRoomId",
+                        column: x => x.RoomsRoomId,
                         principalTable: "Room",
                         principalColumn: "RoomId",
                         onDelete: ReferentialAction.Cascade);
@@ -196,21 +196,21 @@ namespace tema3.Migrations
                 name: "ReservationRoom",
                 columns: table => new
                 {
-                    ReservationId = table.Column<int>(type: "int", nullable: false),
-                    RoomId = table.Column<int>(type: "int", nullable: false)
+                    ReservationsReservationId = table.Column<int>(type: "int", nullable: false),
+                    RoomsRoomId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ReservationRoom", x => new { x.ReservationId, x.RoomId });
+                    table.PrimaryKey("PK_ReservationRoom", x => new { x.ReservationsReservationId, x.RoomsRoomId });
                     table.ForeignKey(
-                        name: "FK_ReservationRoom_Reservation_ReservationId",
-                        column: x => x.ReservationId,
+                        name: "FK_ReservationRoom_Reservation_ReservationsReservationId",
+                        column: x => x.ReservationsReservationId,
                         principalTable: "Reservation",
                         principalColumn: "ReservationId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ReservationRoom_Room_RoomId",
-                        column: x => x.RoomId,
+                        name: "FK_ReservationRoom_Room_RoomsRoomId",
+                        column: x => x.RoomsRoomId,
                         principalTable: "Room",
                         principalColumn: "RoomId",
                         onDelete: ReferentialAction.Cascade);
@@ -220,40 +220,40 @@ namespace tema3.Migrations
                 name: "ReservationService",
                 columns: table => new
                 {
-                    ReservationId = table.Column<int>(type: "int", nullable: false),
-                    ServiceId = table.Column<int>(type: "int", nullable: false)
+                    ReservationsReservationId = table.Column<int>(type: "int", nullable: false),
+                    ServicesServiceId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ReservationService", x => new { x.ReservationId, x.ServiceId });
+                    table.PrimaryKey("PK_ReservationService", x => new { x.ReservationsReservationId, x.ServicesServiceId });
                     table.ForeignKey(
-                        name: "FK_ReservationService_Reservation_ReservationId",
-                        column: x => x.ReservationId,
+                        name: "FK_ReservationService_Reservation_ReservationsReservationId",
+                        column: x => x.ReservationsReservationId,
                         principalTable: "Reservation",
                         principalColumn: "ReservationId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ReservationService_Service_ServiceId",
-                        column: x => x.ServiceId,
+                        name: "FK_ReservationService_Service_ServicesServiceId",
+                        column: x => x.ServicesServiceId,
                         principalTable: "Service",
                         principalColumn: "ServiceId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_FacilityRoom_RoomId",
+                name: "IX_FacilityRoom_RoomsRoomId",
                 table: "FacilityRoom",
-                column: "RoomId");
+                column: "RoomsRoomId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ImageRoom_RoomId",
+                name: "IX_ImageRoom_RoomsRoomId",
                 table: "ImageRoom",
-                column: "RoomId");
+                column: "RoomsRoomId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_OfferRoom_RoomId",
+                name: "IX_OfferRoom_RoomsRoomId",
                 table: "OfferRoom",
-                column: "RoomId");
+                column: "RoomsRoomId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Reservation_UserId",
@@ -261,14 +261,14 @@ namespace tema3.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ReservationRoom_RoomId",
+                name: "IX_ReservationRoom_RoomsRoomId",
                 table: "ReservationRoom",
-                column: "RoomId");
+                column: "RoomsRoomId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ReservationService_ServiceId",
+                name: "IX_ReservationService_ServicesServiceId",
                 table: "ReservationService",
-                column: "ServiceId");
+                column: "ServicesServiceId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
