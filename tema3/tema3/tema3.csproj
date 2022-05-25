@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="MainWindow.xaml~RF16af1f0.TMP" />
     <None Remove="Services\SignInService.cs~RF12fb890.TMP" />
     <None Remove="ViewModels\AdministratorViewModel.cs~RF15f0c2a.TMP" />
     <None Remove="Views\AdministratorView.xaml~RF14440e9.TMP" />

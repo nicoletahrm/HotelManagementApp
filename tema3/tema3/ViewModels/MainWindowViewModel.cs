@@ -43,5 +43,19 @@ namespace tema3.ViewModels
                 return logIn;
             }
         }
+
+        public ICommand withoutAccount;
+
+        public ICommand WithoutAccount
+        {
+            get
+            {
+                if (withoutAccount == null)
+                {
+                    withoutAccount = new RelayCommand(MainWindowService.WithoutAccount);
+                }
+                return withoutAccount;
+            }
+        }
     }
 }

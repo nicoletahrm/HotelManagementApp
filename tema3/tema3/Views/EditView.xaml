@@ -5,8 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:tema3.Views"
         mc:Ignorable="d"
-        Title="EditView" Height="450" Width="800" WindowStartupLocation="CenterScreen">
-    <Grid>
-        
+        Title="EditView" Height="450" Width="890" WindowStartupLocation="CenterScreen">
+
+    <Grid Background="Teal">
+
+        <DockPanel Margin="-5, 10, 10, 10">
+            <ListBox Name="ListBox" FontSize="15" SelectedItem="{Binding SelectedItem, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Width="400" Background="White" Margin="20,30,103,35">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding RoomType, UpdateSourceTrigger=PropertyChanged}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <DockPanel Height="243" Width="254">
+
+                <Label Content="Room type" FontSize="17" HorizontalAlignment="Center" DockPanel.Dock="Top" />
+                <TextBox Name="RoomTypeTextBox" FontSize="17" Height="30" DockPanel.Dock="Top" Width="250" />
+
+                <Label Content="Price" FontSize="17" HorizontalAlignment="Center" DockPanel.Dock="Top" />
+                <TextBox Name="PriceTextBox" FontSize="17" Height="30" DockPanel.Dock="Top" Width="250" />
+
+                <Label Content="Number of rooms" FontSize="17" HorizontalAlignment="Center" DockPanel.Dock="Top" />
+                <TextBox Name="NumberOfRoomsTextBox" FontSize="17" Height="30" DockPanel.Dock="Top" Width="250" />
+
+                <DockPanel Margin="10, 10, 10, 10" Width="240">
+                    <Button Command="{Binding AddCommand, UpdateSourceTrigger=PropertyChanged}" Content="Add" Margin="0, 0, 30, 0" Name="AddButton" FontSize="15" Height="30" Width="60" />
+                    <Button Command="{Binding EditCommand, UpdateSourceTrigger=PropertyChanged}" Content="Edit" Margin="0, 0, 30, 0" Name="EditButton" FontSize="15" Height="30" Width="60" />
+                    <Button Command="{Binding DeleteCommand, UpdateSourceTrigger=PropertyChanged}" Content="Delete" FontSize="15" Height="30" Width="60" />
+                </DockPanel>
+                
+            </DockPanel>
+
+        </DockPanel>
+
     </Grid>
+
 </Window>

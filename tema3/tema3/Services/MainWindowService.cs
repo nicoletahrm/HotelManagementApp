@@ -21,5 +21,11 @@ namespace tema3.Services
             SignInView view = new SignInView("Log In");
             view.Show();
         }
+
+        public void WithoutAccount(Object sender)
+        {
+            HomeView view = new HomeView();
+            view.Show();
+        }
     }
 }
